@@ -12,7 +12,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".30" />
+        app:layout_constraintGuide_percent=".27" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Lagoon"
+        android:textColor="@android:color/white"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
@@ -34,7 +47,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/sign_edit_text_background"
-                android:drawableLeft="@drawable/baseline_email_24"
+                android:drawableStart="@drawable/baseline_email_24"
                 android:drawablePadding="8dp"
                 android:drawableTint="@color/gray"
                 android:ems="10"
@@ -43,7 +56,8 @@
                 android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/editTextTextPassword"
@@ -51,7 +65,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/sign_edit_text_background"
-                android:drawableLeft="@drawable/baseline_lock_24"
+                android:drawableStart="@drawable/baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:drawableTint="@color/gray"
                 android:ems="10"
@@ -60,14 +74,17 @@
                 android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextText"
+                android:autofillHints="" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="250dp"
                 android:layout_height="60dp"
-                android:backgroundTint="@color/blue"
+                android:backgroundTint="@color/dodgerblue"
+                android:fontFamily="sans-serif"
                 android:text="SIGN IN"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -86,6 +103,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_weight="0"
                     android:text="Sign Up"
                     android:textColor="@color/blueviolet"
@@ -95,6 +113,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_weight="0"
                     android:text="Find Account"
                     android:textColor="@color/blueviolet"
