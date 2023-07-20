@@ -7,6 +7,10 @@ android {
     namespace 'com.moonrabbit.lagoon'
     compileSdk 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId "com.moonrabbit.lagoon"
         minSdk 30

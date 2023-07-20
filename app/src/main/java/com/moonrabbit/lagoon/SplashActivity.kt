@@ -5,38 +5,36 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.TextView
+import com.moonrabbit.lagoon.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
 
-    private var SPLASH_SCREEN : Int = 1500
-
+    private lateinit var binding: ActivitySplashBinding
     private lateinit var topAnim: Animation
-    private lateinit var logo: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
 
-        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        logo = findViewById(R.id.textView)
-
-        logo.animation = topAnim
-
-
+        setupAnimation()
         Handler().postDelayed({
-            val intent = Intent(this@SplashActivity, SignInActivity::class.java)
+            startSignInActivity()
+        }, 1500)
+    }
 
-            val p = android.util.Pair<View, String>(logo, "logo")
+    private fun setupAnimation() {
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation)
+        binding.txtLogo.startAnimation(topAnim)
+    }
 
-            val options : ActivityOptions = ActivityOptions.makeSceneTransitionAnimation(this@SplashActivity, p)
-            startActivity(intent,options.toBundle())
-            finish()
-        }, SPLASH_SCREEN.toLong())
-
+    private fun startSignInActivity() {
+        val intent = Intent(this@SplashActivity, SignInActivity::class.java)
+        val options = ActivityOptions.makeSceneTransitionAnimation(this@SplashActivity, binding.txtLogo, "logo")
+        startActivity(intent, options.toBundle())
+        finish()
     }
 }
