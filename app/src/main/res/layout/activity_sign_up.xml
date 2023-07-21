@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".SignInActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -19,8 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="Sign In"
-        android:textColor="@android:color/white"
+        android:text="Sign Up"
+        android:textColor="@android:color/black"
         android:textSize="60dp"
         android:transitionName="logo"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -45,11 +45,31 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/edt_email"
+                android:id="@+id/edt_name"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/sign_edit_text_background"
+                android:drawableStart="@drawable/baseline_person_24"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/gray"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/sign_edit_text_background"
                 android:drawableStart="@drawable/baseline_email_24"
@@ -61,8 +81,9 @@
                 android:padding="8dp"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/edt_name" />
 
             <EditText
                 android:id="@+id/edt_pw"
@@ -82,47 +103,22 @@
                 android:padding="8dp"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edt_email" />
 
-            <TextView
-                android:id="@+id/txt_forgotPw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Forgot Password?"
-                android:textColor="@color/royalblue"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/edt_pw"
-                app:layout_constraintTop_toBottomOf="@+id/edt_pw" />
-
             <Button
-                android:id="@+id/btn_signIn"
+                android:id="@+id/btn_create"
                 android:layout_width="130sp"
                 android:layout_height="60sp"
-                android:layout_marginTop="102dp"
+                android:layout_marginTop="60dp"
                 android:backgroundTint="@color/black"
                 android:fontFamily="sans-serif"
-                android:text="SIGN IN"
+                android:text="Create"
                 android:textSize="19sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_forgotPw" />
-
-            <TextView
-                android:id="@+id/txt_signUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_weight="0"
-                android:text="Sign Up"
-                android:textColor="@color/royalblue"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_signIn" />
+                app:layout_constraintTop_toBottomOf="@+id/edt_pw" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
