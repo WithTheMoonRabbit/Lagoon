@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package usermgmt;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/withthemoonrabbit/lagoserv";
+
+service UserManagement {
+  rpc CreateNewUser (NewUser) returns (User) {}
+
+}
+
+message NewUser {
+  string nickname = 1; // 사용자 이름
+  string email = 2;    // 이메일 주소
+  string pwhash = 3; // 비밀번호 해시
+}
+
+message User {
+  int32 user_id = 1;    // 사용자 ID
+  string nickname = 2;  // 사용자 이름
+  string email = 3;     // 이메일 주소
+  string pwhash = 4; // 비밀번호 해시
+  google.protobuf.Timestamp created_at = 5; // 생성 일자
+}
+
+
+message NewPet {
+  int32 pet_type = 1;
+  string pet_name = 2;
+  int32 user_id = 3;
+}
+
+message Pet {
+  int32 pet_id = 1;
+  int32 pet_type = 2;
+  string pet_name = 3;
+  google.protobuf.Timestamp created_at = 4;
+  int32 user_id = 5;
+  int32 happiness = 6;
+  int32 hunger = 7;
+  int32 health = 8;
+  int32 toilet = 9;
+  int32 cleanliness = 10;
+  int32 fatigue = 11;
+  int32 intelligence = 12;
+  int32 boredom = 13;
+}

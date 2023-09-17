@@ -13,5 +13,9 @@ class SignUpActivity : AppCompatActivity() {
 
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnCreate.setOnClickListener{
+
+        }
     }
 }
